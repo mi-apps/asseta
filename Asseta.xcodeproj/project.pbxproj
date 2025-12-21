@@ -41,6 +41,7 @@
 		B0D1E2C92EF7CEB8008BC694 /* AssetaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AssetaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D1E2CB2EF7CEB8008BC694 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B0D1E2CD2EF7CEB8008BC694 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B0D1E2E42EF7DED8008BC694 /* AssetaWidgetExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssetaWidgetExtensionDebug.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -102,6 +103,7 @@
 		B04BFE372EF589EB006CB78B = {
 			isa = PBXGroup;
 			children = (
+				B0D1E2E42EF7DED8008BC694 /* AssetaWidgetExtensionDebug.entitlements */,
 				B04BFE422EF589EB006CB78B /* Asseta */,
 				B0D1E2CF2EF7CEB8008BC694 /* AssetaWidget */,
 				B0D1E2CA2EF7CEB8008BC694 /* Frameworks */,
@@ -453,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AssetaWidgetExtensionDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5DR4C5RJJS;

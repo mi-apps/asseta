@@ -10,7 +10,7 @@ import SwiftUI
 
 // Widget Data Helper (duplicated for widget extension)
 struct WidgetDataHelper {
-    static let appGroupIdentifier = "group.com.asseta.widget"
+    static let appGroupIdentifier = "group.com.milabs.Asseta.widget"
     static let netWorthKey = "netWorth"
     
     static var sharedUserDefaults: UserDefaults? {
@@ -36,6 +36,7 @@ struct WidgetDataHelper {
               let currencyCode = dict["currencyCode"] as? String,
               let isAnonymized = dict["isAnonymized"] as? Bool,
               let lastUpdatedInterval = dict["lastUpdated"] as? TimeInterval else {
+            print("WIDGET ERROR: [WidgetDataHelper] Failed to deserialize widget data - missing or invalid fields")
             return nil
         }
         
@@ -87,8 +88,12 @@ struct NetWorthTimelineProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<NetWorthEntry>) -> Void) {
         let entry = loadNetWorthEntry()
         
-        // Update every hour
-        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 1, to: Date())!
+        // If no data found, check again in 5 minutes (handles cold start scenarios)
+        // Otherwise update every hour
+        let hasData = entry.currentValue > 0 || !entry.historicalValues.isEmpty
+        let updateInterval: TimeInterval = hasData ? 3600 : 300 // 1 hour if data exists, 5 minutes if not
+        let nextUpdate = Calendar.current.date(byAdding: .second, value: Int(updateInterval), to: Date())!
+        
         let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
         completion(timeline)
     }

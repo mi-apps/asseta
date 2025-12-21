@@ -11,7 +11,7 @@ import WidgetKit
 #endif
 
 struct WidgetDataHelper {
-    static let appGroupIdentifier = "group.com.asseta.widget"
+    static let appGroupIdentifier = "group.com.milabs.Asseta.widget"
     static let netWorthKey = "netWorth"
     static let historicalDataKey = "historicalNetWorth"
     static let currencyCodeKey = "currencyCode"
@@ -56,7 +56,7 @@ struct WidgetDataHelper {
         
         // Reload widget timelines
         #if canImport(WidgetKit)
-        WidgetCenter.shared.reloadTimelines(ofKind: "AssetaWidget")
+        WidgetCenter.shared.reloadAllTimelines()
         #endif
     }
     
