@@ -28,11 +28,21 @@ struct ScrollableList<Content: View>: View {
     var body: some View {
         List {
             content()
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            
+            // Footer spacer to prevent cutoff
+            if !isScrollable {
+                Color.clear
+                    .frame(height: 0)
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+            }
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
         .scrollDisabled(!isScrollable)
-        .frame(height: isScrollable ? nil : CGFloat(itemCount) * rowHeight)
+        .frame(height: isScrollable ? nil : CGFloat(itemCount) * rowHeight + 8)
     }
 }
 

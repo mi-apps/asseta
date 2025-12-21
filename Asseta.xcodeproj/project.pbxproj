@@ -6,8 +6,42 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B0D1E2CC2EF7CEB8008BC694 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D1E2CB2EF7CEB8008BC694 /* WidgetKit.framework */; };
+		B0D1E2CE2EF7CEB8008BC694 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D1E2CD2EF7CEB8008BC694 /* SwiftUI.framework */; };
+		B0D1E2DD2EF7CEB9008BC694 /* AssetaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B0D1E2C92EF7CEB8008BC694 /* AssetaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0D1E2DB2EF7CEB9008BC694 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B04BFE382EF589EB006CB78B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0D1E2C82EF7CEB8008BC694;
+			remoteInfo = AssetaWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B0D1E2E22EF7CEB9008BC694 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B0D1E2DD2EF7CEB9008BC694 /* AssetaWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B04BFE402EF589EB006CB78B /* Asseta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asseta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D1E2C92EF7CEB8008BC694 /* AssetaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AssetaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D1E2CB2EF7CEB8008BC694 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B0D1E2CD2EF7CEB8008BC694 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B0D1E2E42EF7DED8008BC694 /* AssetaWidgetExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssetaWidgetExtensionDebug.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -17,6 +51,13 @@
 				Info.plist,
 			);
 			target = B04BFE3F2EF589EB006CB78B /* Asseta */;
+		};
+		B0D1E2E12EF7CEB9008BC694 /* Exceptions for "AssetaWidget" folder in "AssetaWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B0D1E2C82EF7CEB8008BC694 /* AssetaWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -29,6 +70,14 @@
 			path = Asseta;
 			sourceTree = "<group>";
 		};
+		B0D1E2CF2EF7CEB8008BC694 /* AssetaWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B0D1E2E12EF7CEB9008BC694 /* Exceptions for "AssetaWidget" folder in "AssetaWidgetExtension" target */,
+			);
+			path = AssetaWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,13 +88,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0D1E2C62EF7CEB8008BC694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0D1E2CE2EF7CEB8008BC694 /* SwiftUI.framework in Frameworks */,
+				B0D1E2CC2EF7CEB8008BC694 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B04BFE372EF589EB006CB78B = {
 			isa = PBXGroup;
 			children = (
+				B0D1E2E42EF7DED8008BC694 /* AssetaWidgetExtensionDebug.entitlements */,
 				B04BFE422EF589EB006CB78B /* Asseta */,
+				B0D1E2CF2EF7CEB8008BC694 /* AssetaWidget */,
+				B0D1E2CA2EF7CEB8008BC694 /* Frameworks */,
 				B04BFE412EF589EB006CB78B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,8 +115,18 @@
 			isa = PBXGroup;
 			children = (
 				B04BFE402EF589EB006CB78B /* Asseta.app */,
+				B0D1E2C92EF7CEB8008BC694 /* AssetaWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B0D1E2CA2EF7CEB8008BC694 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0D1E2CB2EF7CEB8008BC694 /* WidgetKit.framework */,
+				B0D1E2CD2EF7CEB8008BC694 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,10 +139,12 @@
 				B04BFE3C2EF589EB006CB78B /* Sources */,
 				B04BFE3D2EF589EB006CB78B /* Frameworks */,
 				B04BFE3E2EF589EB006CB78B /* Resources */,
+				B0D1E2E22EF7CEB9008BC694 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B0D1E2DC2EF7CEB9008BC694 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				B04BFE422EF589EB006CB78B /* Asseta */,
@@ -82,6 +155,28 @@
 			productName = Asseta;
 			productReference = B04BFE402EF589EB006CB78B /* Asseta.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B0D1E2C82EF7CEB8008BC694 /* AssetaWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0D1E2DE2EF7CEB9008BC694 /* Build configuration list for PBXNativeTarget "AssetaWidgetExtension" */;
+			buildPhases = (
+				B0D1E2C52EF7CEB8008BC694 /* Sources */,
+				B0D1E2C62EF7CEB8008BC694 /* Frameworks */,
+				B0D1E2C72EF7CEB8008BC694 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B0D1E2CF2EF7CEB8008BC694 /* AssetaWidget */,
+			);
+			name = AssetaWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = AssetaWidgetExtension;
+			productReference = B0D1E2C92EF7CEB8008BC694 /* AssetaWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +189,9 @@
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					B04BFE3F2EF589EB006CB78B = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					B0D1E2C82EF7CEB8008BC694 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
@@ -113,12 +211,20 @@
 			projectRoot = "";
 			targets = (
 				B04BFE3F2EF589EB006CB78B /* Asseta */,
+				B0D1E2C82EF7CEB8008BC694 /* AssetaWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B04BFE3E2EF589EB006CB78B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D1E2C72EF7CEB8008BC694 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +241,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0D1E2C52EF7CEB8008BC694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0D1E2DC2EF7CEB9008BC694 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0D1E2C82EF7CEB8008BC694 /* AssetaWidgetExtension */;
+			targetProxy = B0D1E2DB2EF7CEB9008BC694 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B04BFE4F2EF589ED006CB78B /* Debug */ = {
@@ -329,6 +450,69 @@
 			};
 			name = Release;
 		};
+		B0D1E2DF2EF7CEB9008BC694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AssetaWidgetExtensionDebug.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DR4C5RJJS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AssetaWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AssetaWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milabs.Asseta.AssetaWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0D1E2E02EF7CEB9008BC694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DR4C5RJJS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AssetaWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AssetaWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milabs.Asseta.AssetaWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -346,6 +530,15 @@
 			buildConfigurations = (
 				B04BFE4F2EF589ED006CB78B /* Debug */,
 				B04BFE502EF589ED006CB78B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0D1E2DE2EF7CEB9008BC694 /* Build configuration list for PBXNativeTarget "AssetaWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0D1E2DF2EF7CEB9008BC694 /* Debug */,
+				B0D1E2E02EF7CEB9008BC694 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

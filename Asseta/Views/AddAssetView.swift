@@ -11,6 +11,7 @@ import SwiftData
 struct AddAssetView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @ObservedObject private var currencyManager = CurrencyManager.shared
     
     @State private var name: String = ""
     @State private var initialValue: String = ""
@@ -97,6 +98,76 @@ struct AddAssetView: View {
             modelContext.insert(assetValue)
         }
         
+        // Explicitly save to ensure changes are persisted and observable
+        try? modelContext.save()
+        updateWidgetData()
         dismiss()
+    }
+    
+    private func updateWidgetData() {
+        // Query assets to calculate net worth
+        let descriptor = FetchDescriptor<Asset>()
+        if let assets = try? modelContext.fetch(descriptor) {
+            let totalNetWorth = assets.compactMap { $0.currentValue }.reduce(0, +)
+            let historicalValues = calculateHistoricalNetWorth(assets: assets)
+            
+            WidgetDataHelper.saveNetWorthData(
+                currentValue: totalNetWorth,
+                historicalValues: historicalValues,
+                currencyCode: currencyManager.selectedCurrencyCode,
+                isAnonymized: currencyManager.isAnonymized
+            )
+        }
+    }
+    
+    private func calculateHistoricalNetWorth(assets: [Asset]) -> [(Date, Decimal)] {
+        var allDates: Set<Date> = []
+        for asset in assets {
+            if let values = asset.values {
+                for value in values {
+                    allDates.insert(value.date)
+                }
+            }
+        }
+        
+        let today = Date()
+        let calendar = Calendar.current
+        let todayStart = calendar.startOfDay(for: today)
+        
+        guard !allDates.isEmpty else {
+            if let pastDate = calendar.date(byAdding: .day, value: -7, to: todayStart) {
+                return [(pastDate, 0), (todayStart, 0)]
+            }
+            return [(todayStart, 0)]
+        }
+        
+        let sortedDates = allDates.sorted()
+        var netWorthOverTime: [(Date, Decimal)] = []
+        
+        for date in sortedDates {
+            var total: Decimal = 0
+            for asset in assets {
+                if let values = asset.values {
+                    let valuesBeforeDate = values.filter { $0.date <= date }
+                    if let mostRecentValue = valuesBeforeDate.sorted(by: { $0.date > $1.date }).first {
+                        total += mostRecentValue.value
+                    }
+                }
+            }
+            netWorthOverTime.append((date, total))
+        }
+        
+        let lastDate = netWorthOverTime.last?.0 ?? todayStart
+        if !calendar.isDate(lastDate, inSameDayAs: todayStart) {
+            var currentTotal: Decimal = 0
+            for asset in assets {
+                if let currentValue = asset.currentValue {
+                    currentTotal += currentValue
+                }
+            }
+            netWorthOverTime.append((todayStart, currentTotal))
+        }
+        
+        return netWorthOverTime
     }
 }

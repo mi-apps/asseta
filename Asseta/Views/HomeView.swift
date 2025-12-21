@@ -191,7 +191,7 @@ struct HomeView: View {
                                 .foregroundColor(.primary)
                         }
                     } else {
-                        ScrollableList(itemCount: sortedAssets.count) {
+                        ScrollableList(itemCount: sortedAssets.count, rowHeight: 66) {
                             ForEach(sortedAssets) { asset in
                                 Button {
                                     selectedAsset = asset
@@ -238,6 +238,7 @@ struct HomeView: View {
                                 }
                             }
                         }
+                        .padding(.bottom, 8)
                     }
                     
                     // Create Asset Button
@@ -249,6 +250,7 @@ struct HomeView: View {
                     .padding(.bottom, 20)
                 }
                 .padding(.top)
+                .padding(.bottom, 8)
             }
             .background(Color(.systemGroupedBackground))
             .navigationTitle("Net Worth")
@@ -332,6 +334,15 @@ struct HomeView: View {
                     )
                 }
             }
+            .onChange(of: assets) { _, _ in
+                updateWidgetData()
+            }
+            .onAppear {
+                updateWidgetData()
+            }
+            .onChange(of: totalNetWorth) { _, _ in
+                updateWidgetData()
+            }
         }
     }
     
@@ -378,6 +389,16 @@ struct HomeView: View {
         editedName = ""
         showingEditName = false
         assetToEdit = nil
+        updateWidgetData()
+    }
+    
+    private func updateWidgetData() {
+        WidgetDataHelper.saveNetWorthData(
+            currentValue: totalNetWorth,
+            historicalValues: historicalNetWorth,
+            currencyCode: currencyManager.selectedCurrencyCode,
+            isAnonymized: currencyManager.isAnonymized
+        )
     }
 }
 
