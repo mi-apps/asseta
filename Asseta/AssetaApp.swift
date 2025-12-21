@@ -12,7 +12,8 @@ import SwiftData
 struct AssetaApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Asset.self,
+            AssetValue.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
