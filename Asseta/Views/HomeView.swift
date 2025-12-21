@@ -191,7 +191,7 @@ struct HomeView: View {
                                 .foregroundColor(.primary)
                         }
                     } else {
-                        ScrollableList(itemCount: sortedAssets.count) {
+                        ScrollableList(itemCount: sortedAssets.count, rowHeight: 66) {
                             ForEach(sortedAssets) { asset in
                                 Button {
                                     selectedAsset = asset
@@ -238,6 +238,7 @@ struct HomeView: View {
                                 }
                             }
                         }
+                        .padding(.bottom, 8)
                     }
                     
                     // Create Asset Button
@@ -248,7 +249,7 @@ struct HomeView: View {
                     .padding(.vertical, 8)
                     .padding(.bottom, 20)
                 }
-                .padding(.top)
+                .padding(.bottom, 8)
             }
             .background(Color(.systemGroupedBackground))
             .navigationTitle("Net Worth")

@@ -91,7 +91,7 @@ struct AssetDetailView: View {
                                 .foregroundColor(.secondary)
                         }
                     } else {
-                        ScrollableList(itemCount: sortedValues.count) {
+                        ScrollableList(itemCount: sortedValues.count, rowHeight: 66) {
                             ForEach(sortedValues) { assetValue in
                                 AssetCard(
                                     title: formatDateMonthDay(assetValue.date),
@@ -123,6 +123,7 @@ struct AssetDetailView: View {
                                 }
                             }
                         }
+                        .padding(.bottom, 8)
                     }
                     
                     // Set Value Button
