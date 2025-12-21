@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Color {
     /// Primary brand color used throughout the app
-    static let appPrimary = Color(red: 0.15, green: 0.35, blue: 0.55)
+    static let appPrimary = Color(red: 0.53, green: 0.72, blue: 0.85)
     
     /// Disabled button color
     static let appDisabled = Color.gray
