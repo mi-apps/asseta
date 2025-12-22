@@ -4,10 +4,6 @@
 
 Asseta is a beautiful and privacy-focused net worth tracking app that helps you monitor your financial growth over time.
 
-[![iOS](https://img.shields.io/badge/iOS-17.0+-blue.svg)](https://developer.apple.com/ios/)
-[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org/)
-[![SwiftUI](https://img.shields.io/badge/SwiftUI-Yes-green.svg)](https://developer.apple.com/xcode/swiftui/)
-
 ---
 
 ## Features
@@ -57,6 +53,8 @@ Asseta is a beautiful and privacy-focused net worth tracking app that helps you 
 
 Your financial data is yours and yours alone. Asseta stores everything locally using iOS's secure storage (SwiftData), ensuring complete privacy and offline functionality. No data is collected, transmitted, or shared.
 
+For more details, see our [Privacy Policy](PRIVACY_POLICY.md).
+
 ---
 
 ## Requirements
@@ -92,9 +90,10 @@ See [LICENSE](LICENSE) file for details.
 
 ## Support
 
-For support or questions:
-- Email: support@mi-apps.com
-- [Privacy Policy](https://mi-apps.github.io/asseta/privacy)
+For support, questions, or feedback:
+- 📧 Email: mi.apps.requests@gmail.com
+- 📖 [Support Documentation](SUPPORT.md) - FAQ, troubleshooting, and getting started guide
+- 🔒 [Privacy Policy](PRIVACY_POLICY.md) - Learn how we protect your data
 
 ---
 
