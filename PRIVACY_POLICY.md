@@ -71,7 +71,7 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 If you have any questions about this Privacy Policy or our data practices, please contact us:
 
 **Email**: mi.apps.requests@gmail.com
-**Website**: http://mi-apps.github.io/
+**Website**: https://github.com/mi-apps
 
 ## Data Collection Summary
 
@@ -85,6 +85,6 @@ Your privacy is not just a policy—it's built into how Asseta works. All your f
 ---
 
 **Asseta**  
-© 2025 mi-apps  
+© 2025 Steven Mi
 All rights reserved
 
