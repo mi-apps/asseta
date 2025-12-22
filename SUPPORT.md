@@ -62,7 +62,7 @@ Currently, your data is stored locally on your device. You can access it through
 
 ### I found a bug or have a feature request
 
-We'd love to hear from you! Please email us at support@mi-apps.com with:
+We'd love to hear from you! Please email us at mi.apps.requests@gmail.com or create an GitHub Issues with:
 - A description of the issue or feature request
 - Steps to reproduce (if it's a bug)
 - Your device model and iOS version (if relevant)
@@ -129,7 +129,7 @@ Your financial data is stored exclusively on your device. We don't collect, tran
 
 **Thank you for using Asseta!** 💙
 
-If you have any other questions or concerns not covered here, please don't hesitate to reach out to us at support@mi-apps.com.
+If you have any other questions or concerns not covered here, please don't hesitate to reach out to us at mi.apps.requests@gmail.com or through GitHub.
 
 ---
 
