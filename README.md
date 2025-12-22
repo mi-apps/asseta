@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/logov3.png" width="60" alt="Asseta Logo" style="border-radius: 12px;">
+</p>
+
 # Asseta - Track and Analyse your net worth 
 
 Asseta is a beautiful and privacy-focused net worth tracking app that helps you monitor your financial growth over time.
