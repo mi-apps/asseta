@@ -1,14 +1,9 @@
-# Asseta
-
-**Track your net worth with beautiful charts and insights**
+# Asseta - Track and Analyse your net worth 
 
 Asseta is a beautiful and privacy-focused net worth tracking app that helps you monitor your financial growth over time.
 
-[![iOS](https://img.shields.io/badge/iOS-17.0+-blue.svg)](https://developer.apple.com/ios/)
-[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org/)
-[![SwiftUI](https://img.shields.io/badge/SwiftUI-Yes-green.svg)](https://developer.apple.com/xcode/swiftui/)
+![](.github/demo.png)
 
----
 
 ## Features
 
@@ -42,7 +37,6 @@ Asseta is a beautiful and privacy-focused net worth tracking app that helps you 
 - Modern, intuitive design
 - Makes tracking your finances effortless
 
----
 
 ## Perfect For
 
@@ -51,20 +45,19 @@ Asseta is a beautiful and privacy-focused net worth tracking app that helps you 
 - 💵 Following savings account balances
 - 📈 Visualizing overall financial progress
 
----
 
 ## Privacy
 
 Your financial data is yours and yours alone. Asseta stores everything locally using iOS's secure storage (SwiftData), ensuring complete privacy and offline functionality. No data is collected, transmitted, or shared.
 
----
+For more details, see our [Privacy Policy](PRIVACY_POLICY.md).
+
 
 ## Requirements
 
 - iOS 17.0 or later
 - iPhone or iPad
 
----
 
 ## Installation
 
@@ -72,7 +65,6 @@ Asseta is available on the App Store.
 
 [Download on the App Store](https://apps.apple.com/app/asseta) *(Link coming soon)*
 
----
 
 ## Development
 
@@ -82,20 +74,18 @@ Built with:
 - **WidgetKit** - Home screen widget support
 - **Charts** - Beautiful data visualizations
 
----
 
 ## License
 
 See [LICENSE](LICENSE) file for details.
 
----
 
 ## Support
 
-For support or questions:
-- Email: support@mi-apps.com
-- [Privacy Policy](https://mi-apps.github.io/asseta/privacy)
+For support, questions, or feedback:
+- 📧 Email: mi.apps.requests@gmail.com
+- 📖 [Support Documentation](SUPPORT.md) - FAQ, troubleshooting, and getting started guide
+- 🔒 [Privacy Policy](PRIVACY_POLICY.md) - Learn how we protect your data
 
----
 
-**© 2025 mi-apps. All rights reserved.**
+**© 2025 Steven Mi. All rights reserved.**
