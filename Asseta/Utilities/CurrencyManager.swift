@@ -13,6 +13,7 @@ class CurrencyManager: ObservableObject {
     
     @Published var selectedCurrencyCode: String = "USD"
     @Published var isAnonymized: Bool = false
+    @Published var isDemoModeEnabled: Bool = false
     
     private init() {
         // Load saved currency code, default to USD
@@ -22,6 +23,9 @@ class CurrencyManager: ObservableObject {
         
         // Load anonymize setting
         self.isAnonymized = UserDefaults.standard.bool(forKey: "isAnonymized")
+        
+        // Load demo mode setting
+        self.isDemoModeEnabled = UserDefaults.standard.bool(forKey: "isDemoModeEnabled")
     }
     
     var selectedCurrencySymbol: String {
@@ -36,6 +40,11 @@ class CurrencyManager: ObservableObject {
     func setAnonymized(_ value: Bool) {
         isAnonymized = value
         UserDefaults.standard.set(value, forKey: "isAnonymized")
+    }
+    
+    func setDemoModeEnabled(_ value: Bool) {
+        isDemoModeEnabled = value
+        UserDefaults.standard.set(value, forKey: "isDemoModeEnabled")
     }
     
     func formatCurrency(_ value: Decimal) -> String {

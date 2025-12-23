@@ -36,17 +36,43 @@ struct ContentView: View {
         }
         .tint(.appPrimary)
         .onAppear {
+            ensureDemoDataSetup()
             ensureWidgetDataExists()
         }
         .onChange(of: scenePhase) { oldPhase, newPhase in
             // Refresh widget data when app becomes active
             // This handles cold start scenarios where widget loads before app writes data
             if newPhase == .active {
+                ensureDemoDataSetup()
                 ensureWidgetDataExists()
                 #if canImport(WidgetKit)
                 WidgetCenter.shared.reloadTimelines(ofKind: "AssetaWidget")
                 #endif
             }
+        }
+        .onChange(of: currencyManager.isDemoModeEnabled) { _, newValue in
+            // Handle demo mode changes from settings
+            if newValue {
+                DemoDataHelper.createDemoData(in: modelContext)
+            } else {
+                DemoDataHelper.deleteDemoData(in: modelContext)
+            }
+        }
+    }
+    
+    private func ensureDemoDataSetup() {
+        if currencyManager.isDemoModeEnabled {
+            // Check if demo data exists, if not create it
+            let descriptor = FetchDescriptor<Asset>()
+            if let allAssets = try? modelContext.fetch(descriptor) {
+                let hasDemoData = allAssets.contains { DemoDataHelper.isDemoAsset($0) }
+                if !hasDemoData {
+                    DemoDataHelper.createDemoData(in: modelContext)
+                }
+            }
+        } else {
+            // Remove demo data if demo mode is disabled
+            DemoDataHelper.deleteDemoData(in: modelContext)
         }
     }
     
