@@ -439,7 +439,7 @@ struct MiniChartWidget: View {
                     path.move(to: CGPoint(x: 0, y: y))
                     path.addLine(to: CGPoint(x: geometry.size.width, y: y))
                 }
-                .stroke(Color.blue, lineWidth: 2)
+                .stroke(Color.accentColor, lineWidth: 2)
             } else {
                 // Draw a line chart
                 let minValue = values.map { Double(truncating: $0.1 as NSDecimalNumber) }.min() ?? 0
@@ -459,7 +459,7 @@ struct MiniChartWidget: View {
                         }
                     }
                 }
-                .stroke(Color.blue, lineWidth: 2)
+                .stroke(Color.accentColor, lineWidth: 2)
             }
         }
     }
@@ -498,11 +498,11 @@ struct AssetaWidget: Widget {
         StaticConfiguration(kind: kind, provider: NetWorthTimelineProvider()) { entry in
             if #available(iOS 17.0, *) {
                 AssetaWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
+                    .containerBackground(Color.black, for: .widget)
             } else {
                 AssetaWidgetEntryView(entry: entry)
                     .padding()
-                    .background()
+                    .background(Color.black)
             }
         }
         .configurationDisplayName("Net Worth")
