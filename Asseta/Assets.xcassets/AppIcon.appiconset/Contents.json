@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "logov2.png",
+      "filename" : "logov3.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "logov2 1.png",
+      "filename" : "logov3 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
